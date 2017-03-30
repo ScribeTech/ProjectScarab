@@ -12,7 +12,8 @@
     "test": "npm run test:server && npm run test:client",
     "test:server": "echo \"Error: no test specified\" && exit 1",
     "test:client": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "deploy": "git push -f deploy master"
   },
   "author": "ScribeTech",
   "license": "ISC",
