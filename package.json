@@ -9,9 +9,7 @@
   "scripts": {
     "dev:client": "webpack-dev-server",
     "dev:server": "nodemon server/app.js",
-    "test": "npm run test:server && npm run test:client",
-    "test:server": "echo \"Error: no test specified\" && exit 1",
-    "test:client": "echo \"Error: no test specified\" && exit 1",
+    "test": "jasmine",
     "build": "webpack -p",
     "deploy": "git push -f deploy master",
     "start": "pm2 start server/app.js --name Server --env production",
