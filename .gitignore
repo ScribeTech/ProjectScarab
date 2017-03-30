@@ -3,6 +3,7 @@
 # Secrets
 config.js
 deploy_key
+deploy_key.pem
 
 # Logs
 logs
