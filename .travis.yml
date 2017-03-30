@@ -3,20 +3,25 @@ cache:
   directories:
   - node_modules
 node_js:
-  - '7'
-addons:
-  ssh_known_hosts: 174.138.73.162
-
+- '7'
 before_deploy:
-- openssl aes-256-cbc -K $encrypted_1a5f07d3a46d_key -iv $encrypted_1a5f07d3a46d_iv
-  -in deploy_key.pem.enc -out deploy_key.pem -d
 - eval "$(ssh-agent -s)"
-- ssh-add deploy-key.pem
-- git remote add deploy ssh://server@174.138.73.162/home/server/surveyscribe.git
+- openssl aes-256-cbc \
+  -K $encrypted_1a5f07d3a46d_key \
+  -iv $encrypted_1a5f07d3a46d_iv \
+  -in "deploy_key.pem.enc" \
+  -out "deploy_key.pem" -d
+- rm "deploy_key.pem.enc"
+- chmod 600 "deploy_key.pem"
+# - ssh-add "deploy_key.pem"
+- mv "deploy_key.pem" "~/.ssh/id_rsa"
 
 deploy:
   provider: script
   skip_cleanup: true
-  script: git push -f deploy master
+  script:
+  - git remote add deploy ssh://server@174.138.73.162/home/server/surveyscribe.git
+  - git config user.name "Travis CI"
+  - git push -f deploy master
   on:
     branch: master
