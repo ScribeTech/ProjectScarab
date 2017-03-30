@@ -11,7 +11,6 @@
     "dev:server": "nodemon server/app.js",
     "test": "jasmine",
     "build": "webpack -p",
-    "deploy": "git push -f deploy master",
     "start": "pm2 start server/app.js --name Server --env production",
     "restart": "pm2 restart Server",
     "stop": "pm2 stop Server"
