@@ -2,6 +2,7 @@
 
 # Secrets
 config.js
+deploy_key
 
 # Logs
 logs
