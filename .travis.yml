@@ -9,9 +9,9 @@ addons:
   ssh_known_hosts: 174.138.73.162
 
 before_deploy:
-- openssl aes-256-cbc -K $encrypted_1a5f07d3a46d_key -iv $encrypted_1a5f07d3a46d_iv -in deploy_key.enc -out deploy_key.pem -d
+- ls -a
+- openssl aes-256-cbc -K $encrypted_1a5f07d3a46d_key -iv $encrypted_1a5f07d3a46d_iv -in deploy_key.pem.enc -out deploy_key.pem -d
 - eval "$(ssh-agent -s)"
-- ls
 - ssh-add deploy-key.pem
 - git remote add deploy ssh://server@174.138.73.162/home/server/surveyscribe.git
 
