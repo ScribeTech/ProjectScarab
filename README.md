@@ -6,7 +6,7 @@
 
   - __Product Owner__: Elijah Schow
   - __Scrum Master__: Megan Rabuse
-  - __Development Team Members__: Jim Chung, Clark Baumgartner
+  - __Development Team Members__: Jin Chung, Clark Baumgartner
 
 ## Table of Contents
 
