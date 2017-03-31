@@ -1,23 +1,10 @@
 language: node_js
-cache:
-  directories:
-  - node_modules
 node_js:
 - '7'
-before_deploy:
+after_success:
 - eval "$(ssh-agent -s)"
-- openssl aes-256-cbc -K $encrypted_1a5f07d3a46d_key -iv $encrypted_1a5f07d3a46d_iv -in id_deploy.enc -out id_deploy -d
-- rm id_deploy.enc
-- chmod 600 id_deploy
-- ssh-add id_deploy
-- rm id_deploy
-
-deploy:
-  provider: script
-  skip_cleanup: true
-  script:
-  - git remote add deploy ssh://server@174.138.73.162/home/server/surveyscribe.git
-  - git config user.name "Travis CI"
-  - git push -f deploy master
-  on:
-    branch: master
+- openssl aes-256-cbc -K $encrypted_1a5f07d3a46d_key -iv $encrypted_1a5f07d3a46d_iv -in .travis/id_deploy.enc -out .travis/id_deploy -d
+- chmod 600 .travis/id_deploy
+- ssh-add .travis/id_deploy
+- git remote add deploy ssh://server@174.138.73.162/home/server/surveyscribe.git
+- git push -f deploy master
