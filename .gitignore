@@ -2,7 +2,7 @@
 
 # Secrets
 config.js
-deploy_key
+id_deploy
 *.pem
 
 # Logs
