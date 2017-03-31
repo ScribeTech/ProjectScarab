@@ -5,6 +5,7 @@ after_success:
   - openssl aes-256-cbc -K $encrypted_1a5f07d3a46d_key -iv $encrypted_1a5f07d3a46d_iv -in .travis/deploy_key.pem.enc -out .travis/deploy_key.pem -d
   - eval "$(ssh-agent -s)" #start the ssh agent
   - chmod 600 .travis/deploy_key.pem # this key should have push access
-  - ssh-add .travis/deploy_key.pem -p ""
+  - ssh-add .travis/deploy_key.pem -p $deploy_key_password # identify with this key
+  - rm .travis/deploy_key.pem # remove the key so it doesn't get pushed to the server
   - git remote add deploy ssh://server@174.138.73.162/home/server/surveyscribe.git
   - git push deploy
