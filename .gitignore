@@ -2,7 +2,6 @@
 
 # Secrets
 config.js
-id_deploy
 *.pem
 
 # Logs
