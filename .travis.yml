@@ -11,6 +11,6 @@ after_success:
 - rm $KEY_ENC
 - chmod 600 $KEY
 - mv $KEY_ENC ~/.ssh/id_rsa
-- git remote add deploy server@174.138.73.162:/home/server/surveyscribe.git
+- git remote add deploy server@174.138.73.162:/home/server/sandbox.git
 - git config user.name "Travis CI"
 - git push -f deploy
