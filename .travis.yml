@@ -12,4 +12,4 @@ after_success:
   - chmod 600 $KEY
   - mv $KEY_ENC ~/.ssh/id_rsa
   - git remote add deploy server@174.138.73.162:/home/server/sandbox.git
-  - git push -fv deploy master
+  - git push -f deploy
