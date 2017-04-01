@@ -4,7 +4,6 @@ node_js:
 addons:
   ssh_known_hosts: 174.138.73.162
 after_success:
-  - set -u
   - eval "$(ssh-agent -s)"
   - KEY_ENC=.travis/sandbox.pem.enc
   - KEY=.travis/sandbox.pem
