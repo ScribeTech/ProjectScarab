@@ -1,17 +1,14 @@
 language: node_js
-cache:
-  directories:
-  - node_modules
 node_js:
 - '7'
 before_deploy:
 - set -x
 - eval "$(ssh-agent -s)"
-- openssl aes-256-cbc -K $encrypted_1a5f07d3a46d_key -iv $encrypted_1a5f07d3a46d_iv -in deploy_key.pem.enc -out deploy_key.pem -d
-- rm deploy_key.pem.enc
-- chmod 600 deploy_key.pem
-- mv deploy_key.pem ~/.ssh/id_rsa
-- rm deploy_key.pem
+- openssl aes-256-cbc -K $encrypted_c6c040438739_key -iv $encrypted_c6c040438739_iv -in .travis/sandbox.pem.enc -out .travis/sandbox.pem -d
+- rm .travis/sandbox.pem.enc
+- chmod 600 .travis/sandbox.pem
+- mv .travis/sandbox.pem ~/.ssh/id_rsa
+- rm .travis/sandbox.pem
 
 deploy:
   provider: script
