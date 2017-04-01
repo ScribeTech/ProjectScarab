@@ -8,7 +8,6 @@ before_deploy:
 - rm .travis/sandbox.pem.enc
 - chmod 600 .travis/sandbox.pem
 - mv .travis/sandbox.pem ~/.ssh/id_rsa
-- rm .travis/sandbox.pem
 
 deploy:
   provider: script
