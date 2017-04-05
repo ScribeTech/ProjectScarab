@@ -1,8 +1,15 @@
 language: node_js
 node_js:
 - '7'
+env:
+  - CXX=g++-4.8
 addons:
-  ssh_known_hosts: 174.138.73.162
+  - ssh_known_hosts: 174.138.73.162
+  - apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
 after_success:
   - eval "$(ssh-agent -s)"
   - KEY_ENC=.travis/sandbox.pem.enc
