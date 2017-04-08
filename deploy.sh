@@ -6,4 +6,4 @@ openssl aes-256-cbc -K $encrypted_c6c040438739_key -iv $encrypted_c6c040438739_i
 rm $KEY_ENC
 chmod 600 $KEY
 mv $KEY_ENC ~/.ssh/id_rsa
-scp . deploy@174.138.73.162:/var/www/ScribeTech/SurveyScribe
+scp . ssh://deploy@174.138.73.162/var/www/ScribeTech/SurveyScribe
