@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 KEY_ENC=".travis/sandbox.pem.enc"
 KEY=".travis/sandbox.pem"
