@@ -10,8 +10,6 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
-before_deploy:
-  - chmod u+x .travis/deploy.sh 
 deploy:
   provider: script
   script: .travis/deploy.sh
