@@ -12,7 +12,7 @@ addons:
       - g++-4.8
 deploy:
   provider: script
-  script: deploy.sh
+  script: https://raw.githubusercontent.com/ScribeTech/Sandbox/master/deploy.sh
   skip_cleanup: true
   on:
     branch: master
