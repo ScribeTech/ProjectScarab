@@ -21,4 +21,4 @@ after_success:
  - rm $KEY
  - git add remote deploy $DEPLOY_REMOTE
  - git push -f deploy
- - echo "$DEPLOY_REMOTE"
+ - echo $DEPLOY_REMOTE
