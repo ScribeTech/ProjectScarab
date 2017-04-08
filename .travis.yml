@@ -10,13 +10,9 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
-before_install:
-  - git clone https://github.com/ScribeTech/Sandbox.git
-  - cd Sandbox
-  - chmod u+x .travis/deploy.sh
 deploy:
   provider: script
-  script: .travis/deploy.sh
+  script: ./.travis/deploy.sh
   skip_cleanup: true
   on:
     branch: master
