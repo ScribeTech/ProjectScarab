@@ -9,5 +9,4 @@ eval `ssh-agent -s`
 ssh-add $KEY
 rm $KEY
 git add remote deploy $DEPLOY_REMOTE
-git push -f deploy
-echo $DEPLOY_REMOTE
+git push -f deploy master
