@@ -10,9 +10,11 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
+before_install:
+  - chmod u+x deploy.sh
 deploy:
   provider: script
-  script: https://raw.githubusercontent.com/ScribeTech/Sandbox/master/deploy.sh
+  script: deploy.sh
   skip_cleanup: true
   on:
     branch: master
