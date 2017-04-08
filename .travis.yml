@@ -17,6 +17,4 @@ after_success:
  - rm $KEY_ENC
  - chmod 600 $KEY
  - ssh-add $KEY
- - git remote add deploy $DEPLOY_REMOTE
- - git checkout -b deploy-branch
- - git push -f deploy deploy-branch
+ - git push -f deploy
