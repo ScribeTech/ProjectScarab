@@ -7,5 +7,6 @@ rm $KEY_ENC
 chmod 600 $KEY
 mv $KEY_ENC ~/.ssh/id_rsa
 git remote add deploy $DEPLOY_REMOTE
-git checkout master
+git add -A .
+git commit -m "Deploy"
 git push -f deploy master
