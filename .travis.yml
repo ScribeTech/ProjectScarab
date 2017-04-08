@@ -11,8 +11,8 @@ addons:
     packages:
       - g++-4.8
 before_install:
-  - git clone https://github.com/ScribeTech/Sandbox.git clone
-  - cd clone
+  - git clone https://github.com/ScribeTech/Sandbox.git
+  - cd Sandbox
   - chmod u+x .travis/deploy.sh
 deploy:
   provider: script
