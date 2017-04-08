@@ -10,7 +10,9 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
-after_success:
+deploy:
+  provider: script
+  script:
   - eval "$(ssh-agent -s)"
   - KEY_ENC=.travis/sandbox.pem.enc
   - KEY=.travis/sandbox.pem
@@ -19,4 +21,7 @@ after_success:
   - chmod 600 $KEY
   - mv $KEY_ENC ~/.ssh/id_rsa
   - git remote add deploy $DEPLOY_REMOTE
-  - git push -f deploy
+  - git push -fv deploy master
+  on:
+    branch: master
+
