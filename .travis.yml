@@ -11,10 +11,10 @@ addons:
     packages:
       - g++-4.8
 before_install:
-  - chmox u+x ./deploy.sh
+  - chmod u+x ./deploy.sh
 deploy:
   skip_cleanup: true
   provider: script
-  script: bash ./deploy.sh
+  script: ./deploy.sh
   on:
     branch: master
