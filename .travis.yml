@@ -18,6 +18,7 @@ before_deploy:
   - chmod 600 $KEY
   - eval "$(ssh-agent -s)"
   - ssh-add $KEY
+  - ssh -o StrictHostKeyChecking=no $DEPLOY_HOST
   - rm $KEY
 deploy:
   skip_cleanup: true
