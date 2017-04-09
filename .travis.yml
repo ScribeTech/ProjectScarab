@@ -10,8 +10,15 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
-before_install:
+before_deploy:
   - chmod +x ./deploy.sh
+  - KEY_ENC=.travis/sandbox.pem.enc
+  - KEY=.travis/sandbox.pem
+  - openssl aes-256-cbc -K $encrypted_c6c040438739_key -iv $encrypted_c6c040438739_iv -in $KEY_ENC -out $KEY -d
+  - chmod 600 $KEY
+  - eval "$(ssh-agent -s)"
+  - ssh-add $KEY
+  - rm $KEY
 deploy:
   skip_cleanup: true
   provider: script
