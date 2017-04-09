@@ -10,6 +10,8 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
+before_install:
+  - chmox u+x ./deploy.sh
 deploy:
   skip_cleanup: true
   provider: script
