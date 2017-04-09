@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eu -o pipefail
+set -eu
 
 KEY_ENC=".travis/sandbox.pem.enc"
 KEY=".travis/sandbox.pem"
