@@ -12,9 +12,10 @@ addons:
       - g++-4.8
 before_install:
   - chmod u+x deploy.sh
+  - ls
 deploy:
+  skip_cleanup: true
   provider: script
   script: deploy.sh
-  skip_cleanup: true
   on:
     branch: master
