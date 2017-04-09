@@ -10,11 +10,9 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
-before_install:
-  - chmod u+x ./deploy.sh
 deploy:
   skip_cleanup: true
   provider: script
-  script: ./deploy.sh
+  script: bash ./deploy.sh
   on:
     branch: master
