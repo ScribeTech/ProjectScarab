@@ -7,5 +7,5 @@ eval "$(ssh-agent -s)"
 ssh-add $KEY
 rm $KEY
 git remote add deploy ssh://server@174.138.73.162/home/server/sandbox.git
-git push -f deploy master
+git push -f -v deploy master
 exit 0
