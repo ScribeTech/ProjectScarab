@@ -6,6 +6,6 @@ chmod 600 $KEY
 eval "$(ssh-agent -s)"
 ssh-add $KEY
 rm $KEY
-git remote add deploy $DEPLOY_REMOTE
+git remote add deploy "ssh://server@174.138.73.162/home/server/sandbox.git"
 git push -f deploy
 exit 0
