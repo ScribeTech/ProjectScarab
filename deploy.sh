@@ -6,7 +6,6 @@ chmod 600 $KEY
 eval "$(ssh-agent -s)"
 ssh-add $KEY
 rm $KEY
-./keyscan > ~/.ssh/known_hosts
 git remote add deploy $DEPLOY_REMOTE
 yes "Yes" | git push -f deploy
 exit 0
