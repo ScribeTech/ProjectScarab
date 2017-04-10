@@ -7,5 +7,5 @@ eval "$(ssh-agent -s)"
 ssh-add $KEY
 rm $KEY
 git remote add deploy $DEPLOY_REMOTE
-yes "Yes" | git push -f deploy
+git push -f deploy
 exit 0
