@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 KEY_ENC=.travis/sandbox.pem.enc
 KEY=.travis/sandbox.pem
 openssl aes-256-cbc -K $encrypted_c6c040438739_key -iv $encrypted_c6c040438739_iv -in $KEY_ENC -out $KEY -d
